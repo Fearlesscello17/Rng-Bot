@@ -1,7 +1,13 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 const axios = require('axios');
 
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ 
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent
+  ] 
+});
 
 const TOKEN = process.env.TOKEN;
 const WEBHOOK_URL = "https://discord.com/api/webhooks/1494856707212574831/unMNxUm1po3xgqEUJEsUmeXHBDRiVDHZa3f_fHcIuqKCVyfDdNKlcUrS5K3H3o7M3fbX";
